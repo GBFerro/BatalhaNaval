@@ -402,7 +402,7 @@ namespace teste_batalha_naval
             return 0;
         }
 
-        public int VerifyShot(int row, int col)
+        public int VerifyShoot(int row, int col)
         {
             if (this._board[row, col] == 0)
             {
