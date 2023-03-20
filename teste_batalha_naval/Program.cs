@@ -214,7 +214,7 @@ internal class Program
             }
         }
 
-        char VerifyShootPosition(Player player)//(int row, int col)
+        void VerifyShootPosition(Player player)//(int row, int col)
         {
             int[] posVector = VerifyInsertPosition();
             int playerShoot;
@@ -224,34 +224,16 @@ internal class Program
             {
                 Console.WriteLine(">>>SPLASH<<<");
                 round++;
-                return 'O';
             }
             else if (playerShoot == 2)
             {
                 Console.WriteLine(">>>CRASH<<<");
                 player.TakeLife();
-                return 'X';
             }
             else
             {
                 round++;
-                return '-';//VerifyShootPosition(player);
             }
-        }
-
-        bool ChangePlayer(char character, Player player)
-        {
-            if (character == '-')
-            {
-                Console.WriteLine("Perdeu a vez!");
-                return true;
-            }
-            else if (character == 'X')
-            {
-                VerifyShootPosition(player);
-                return false;
-            }
-            return true;
         }
     }
 }
